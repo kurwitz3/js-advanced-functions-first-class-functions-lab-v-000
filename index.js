@@ -1,18 +1,16 @@
-function returnFirstTwoDrivers(array){
-    const newArray = array.slice(0,2)
-    return newArray
+const returnFirstTwoDrivers = function(drivers){
+    return drivers.slice(0,2)
 }
 
-function returnLastTwoDrivers(array){
-    const lastTwo = array.slice(-2)
-    return lastTwo
+const returnLastTwoDrivers = function(drivers){
+    return drivers.slice(-2)
 }
 
 const selectingDrivers = [returnFirstTwoDrivers,returnLastTwoDrivers]
 
 function createFareMultiplier(integer){
-    return function(event){
-        return integer * event
+    return function(fare){
+        return fare * integer
     }
 }
 
@@ -20,6 +18,6 @@ const fareDoubler = createFareMultiplier(2)
 
 const fareTripler = createFareMultiplier(3)
 
-function selectDifferentDrivers(arrayOfDrivers,fun ){
-    return fun(arrayOfDrivers)
+function selectDifferentDrivers(drivers,fn){
+    return fn(drivers)
 }
